@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán chất lượng rượu vang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Dự đoán chất lượng rượu vang</h2>
+    <form action="/predict" method="post">
+        <label>Fixed acidity:</label><input type="number" step="any" name="fixed_acidity" required><br>
+        <label>Volatile acidity:</label><input type="number" step="any" name="volatile_acidity" required><br>
+        <label>Citric acid:</label><input type="number" step="any" name="citric_acid" required><br>
+        <label>Residual sugar:</label><input type="number" step="any" name="residual_sugar" required><br>
+        <label>Chlorides:</label><input type="number" step="any" name="chlorides" required><br>
+        <label>Free sulfur dioxide:</label><input type="number" step="any" name="free_sulfur_dioxide" required><br>
+        <label>Total sulfur dioxide:</label><input type="number" step="any" name="total_sulfur_dioxide" required><br>
+        <label>Density:</label><input type="number" step="any" name="density" required><br>
+        <label>pH:</label><input type="number" step="any" name="ph" required><br>
+        <label>Sulphates:</label><input type="number" step="any" name="sulphates" required><br>
+        <label>Alcohol:</label><input type="number" step="any" name="alcohol" required><br>
+        <input type="submit" value="Dự đoán">
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
